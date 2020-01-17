@@ -1,23 +1,37 @@
-<img src="Case_A.png">Case_A</img><br />
-<img src="Case_B.png">Case_B</img><br />
-<img src="Case_C.png">Case_C</img><br />
-<img src="Case_D.png">Case_D</img><br />
-<img src="Case_E.png">Case_E</img><br />
-<img src="Case_F.png">Case_F</img><br />
-<img src="Case_G.png">Case_G</img><br />
-<img src="Case_H.png">Case_H</img><br />
-<img src="Case_I.png">Case_I</img><br />
-<img src="Case_J.png">Case_J</img><br />
-<img src="Case_K.png">Case_K</img><br />
-<img src="Case_L.png">Case_L</img><br />
-<img src="Case_M.png">Case_M</img><br />
-<img src="Case_N.png">Case_N</img><br />
-<img src="Case_O.png">Case_O</img><br />
-<img src="Case_Z.png">Case_Z</img>
-
-<style>
-    body{
-        background: black;
-        color: white;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>éditeur de niveau</title>
+        <link rel="stylesheet" href="stylesheet.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="liste">
+            <img src="Case_A.png"> A</img><br />
+            <img src="Case_B.png"> B</img><br />
+            <img src="Case_C.png"> C</img><br />
+            <img src="Case_D.png"> D</img><br />
+            <img src="Case_E.png"> E</img><br />
+            <img src="Case_F.png"> F</img><br />
+            <img src="Case_G.png"> G</img><br />
+            <img src="Case_H.png"> H</img><br />
+            <img src="Case_I.png"> I</img><br />
+            <img src="Case_J.png"> J</img><br />
+            <img src="Case_K.png"> K</img><br />
+            <img src="Case_L.png"> L</img><br />
+            <img src="Case_M.png"> M</img><br />
+            <img src="Case_N.png"> N</img><br />
+            <img src="Case_O.png"> O</img><br />
+            <img src="Case_Z.png"> Z</img>
+        </div>
+        
+        <div id="block">
+            <label for="msg">Code de la map :</label><br />
+            <textarea id="msg" name="user_message"></textarea><br />
+            <button onclick="actualiser()">Actualiser</button>
+        </div>
+        <div id="affiche"><table id="map"></table></div>
+    <footer>
+    </footer>
+</html>

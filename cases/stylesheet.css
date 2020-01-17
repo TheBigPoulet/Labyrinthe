@@ -1,0 +1,33 @@
+body{
+    background: black;
+    color: white;
+    display: table;
+    border-spacing: 15px;
+}
+
+#liste,#block,#affiche{
+    display: table-cell;
+    
+}
+
+#block > #msg{
+    height: 300px;
+    width: 300px;
+}
+
+#liste > img{
+    border:1px white solid;
+}
+
+table{
+    border: 0;
+    border-collapse : collapse;
+}
+
+table img{
+    display:block;
+}
+
+td{
+    padding: 0;
+  }
