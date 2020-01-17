@@ -1,15 +1,11 @@
 pas = 40;
-score_max = 1;
 decal_top = document.getElementById("map").offsetTop + 11;
 decal_left = document.getElementById("map").offsetLeft + 11;
+point_max = 15;
+
 function partie_fini()
 {
-    document.getElementById(this.nom+"_win").style.visibility="visible";
-    document.getElementById("map").style.visibility="hidden";
-    document.getElementById("J1").style.visibility="hidden";
-    document.getElementById("J2").style.visibility="hidden";
-    document.getElementById("cle").style.visibility="hidden";
-    document.getElementById("score").style.visibility="hidden";
+    document.location.href="fin.html?win="+this.nom; 
 }
 
 function actualisation_J()
@@ -19,6 +15,10 @@ function actualisation_J()
     document.getElementById(this.nom).style.top=this.val_top+'px';
     document.getElementById(this.nom).style.left=this.val_left+'px';
     document.getElementById('score_'+this.nom).innerHTML=this.point;
+    if(this.point==point_max-1)
+    {
+        document.getElementById('score_'+this.nom).style.color="red";
+    }
 }
 
 function actualisation_C()
@@ -162,17 +162,17 @@ function verif_point(J)
         if(J=="J1")
         {   
             J1.point++;
-            if(J1.point==score_max)
+            if(J1.point==point_max)
             {
-                //J1.partie_fini();
+                J1.partie_fini();
             }
         }
         else if(J=="J2")
         {   
             J2.point++;
-            if(J2.point==score_max)
+            if(J2.point==point_max)
             {
-                //J2.partie_fini();
+                J2.partie_fini();
             }
         }
     }
