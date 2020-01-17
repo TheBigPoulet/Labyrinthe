@@ -18,7 +18,7 @@ function actualisation_J()
     this.val_left=decal_left+this.X*pas;
     document.getElementById(this.nom).style.top=this.val_top+'px';
     document.getElementById(this.nom).style.left=this.val_left+'px';
-    document.getElementById('score_'+this.nom).innerHTML=this.nom+": "+this.point;
+    document.getElementById('score_'+this.nom).innerHTML=this.point;
 }
 
 function actualisation_C()
