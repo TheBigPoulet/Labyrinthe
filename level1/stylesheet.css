@@ -1,0 +1,45 @@
+body{
+  background: black;
+  color: white;
+}
+
+#Cases{
+  visibility: hidden;
+}
+
+table{
+  border: 0;
+  border-collapse : collapse;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+table img{
+	display:block;
+}
+
+#J1,#J2,#cle{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+td{
+  padding: 0;
+  text-align : center;
+}
+
+#score{
+  position: absolute;
+}
+
+#J1_win,#J2_win{
+  visibility: hidden;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  background: white;
+  color: black;
+  text-align: center;
+}

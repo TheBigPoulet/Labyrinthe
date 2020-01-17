@@ -1,0 +1,96 @@
+@font-face {
+	font-family: "Retro_game";
+  src: url('Team401.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  background: black;
+  color: white;
+}
+::-webkit-scrollbar-track
+{
+	background-color:black;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: aqua;
+}
+
+#corp{
+  margin-top: 200px;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: table;
+  border-spacing: 10px;
+}
+
+h1{
+  text-align: center;
+  position: fixed;
+  width: 800px;
+  top:20px;
+  left: 50%;
+  margin-left: -400px; 
+  font-family: "Retro_game";
+  background: -webkit-linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.level{
+  text-align: left;
+  display: table-cell;
+  padding: 20px;
+  border-radius: 10px;
+  background : linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+.level > h2{
+  text-align: center;
+  font-family: "Retro_game";
+  background: -webkit-linear-gradient(45deg,yellow, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.level > div > .detail{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.level > a > img{
+  /*float: left;*/
+  width: 300px;
+  height: 200px;
+  -webkit-transition: all 0.5s ease; /* Safari et Chrome */
+  -moz-transition: all 0.5s ease; /* Firefox */
+  -ms-transition: all 0.5s ease; /* Internet Explorer 9 */
+  -o-transition: all 0.5s ease; /* Opera */
+  transition: all 0.5s ease;
+  border-radius: 10px;
+}
+
+a:hover > img {
+  /* L'image est grossie de 25% */
+  -webkit-transform:scale(1.10); /* Safari et Chrome */
+  -moz-transform:scale(1.10); /* Firefox */
+  -ms-transform:scale(1.10); /* Internet Explorer 9 */
+  -o-transform:scale(1.10); /* Opera */
+  transform:scale(1.10);
+  }

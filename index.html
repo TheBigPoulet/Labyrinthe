@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Selection des levels</title>
+        <link rel="stylesheet" href="stylesheet.css" />
+    </head>
+    <body>
+        <h1>Selection des levels</h1>
+        <div id="corp">
+            <div id="level1" class="level">
+                <h2>Level 1</h2>
+                <a href="level1/index.html"><img src="level1/map.png"></img></a>
+                <div>
+                    <p><strong>Nombre de joueur :</strong> 2<br />
+                        <strong>Régle :</strong> attrape le plus de pièce<br />
+                        <strong>Objectif :</strong> Avoir X pièces<br />
+                        <strong>Taille de la map :</strong> petite
+                    </p>
+                </div>
+            </div>
+            <div id="level2" class="level">
+                <h2>Level 2</h2>
+                <a href="level1/index.html"><img src="level1/map.png"></img></a>
+                <div>
+                    <p>la c'est la déscription</p>
+                </div>
+            </div>
+            <div id="level3" class="level">
+                <h2>Level 3</h2>
+                <a href="level1/index.html"><img src="level1/map.png"></img></a>
+                <div>
+                    <p>la c'est la déscription</p>
+                </div>
+            </div>
+            <div id="level4" class="level">
+                <h2>Level 4</h2>
+                <a href="level1/index.html"><img src="level1/map.png"></img></a>
+                <div>
+                    <p>la c'est la déscription</p>
+                </div>
+            </div>
+            <div id="level5" class="level">
+                <h2>Level 5</h2>
+                <a href="level1/index.html"><img src="level1/map.png"></img></a>
+                <div>
+                    <p>la c'est la déscription</p>
+                </div>
+            </div>
+            <div id="level6" class="level">
+                <h2>Level 6</h2>
+                <a href="level1/index.html"><img src="level1/map.png"></img></a>
+                <div>
+                    <p>la c'est la déscription</p>
+                </div>
+            </div>
+            <div id="level7" class="level">
+                <h2>Level 7</h2>
+                <a href="level1/index.html"><img src="level1/map.png"></img></a>
+                <div>
+                    <p>la c'est la déscription</p>
+                </div>
+            </div>
+            <div id="level8" class="level">
+                <h2>Level 8</h2>
+                <a href="level1/index.html"><img src="level1/map.png"></img></a>
+                <div>
+                    <p>la c'est la déscription</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="jquery-mousewheel-master/jquery.mousewheel.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('html,#corp').mousewheel(function(e, delta) {
+                    this.scrollLeft -= (delta * 60);
+                    e.preventDefault();
+                });
+            });
+        </script>
+    </footer>
+</html>
