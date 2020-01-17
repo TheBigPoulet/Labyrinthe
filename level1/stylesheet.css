@@ -11,8 +11,12 @@ table{
   border: 0;
   border-collapse : collapse;
   position: absolute;
-  top:0;
-  left: 0;
+  left: 50%;
+  top: 50%;
+  width: 360px;
+  height: 280px;
+  margin-left: -180px;
+  margin-top: -140px;
 }
 
 table img{

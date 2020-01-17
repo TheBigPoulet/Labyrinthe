@@ -1,6 +1,7 @@
 pas = 40;
 score_max = 1;
-
+decal_top = document.getElementById("map").offsetTop + 11;
+decal_left = document.getElementById("map").offsetLeft + 11;
 function partie_fini()
 {
     document.getElementById(this.nom+"_win").style.visibility="visible";
@@ -13,8 +14,8 @@ function partie_fini()
 
 function actualisation_J()
 {
-    this.val_top=11+this.Y*pas;
-    this.val_left=11+this.X*pas;
+    this.val_top=decal_top+this.Y*pas;
+    this.val_left=decal_left+this.X*pas;
     document.getElementById(this.nom).style.top=this.val_top+'px';
     document.getElementById(this.nom).style.left=this.val_left+'px';
     document.getElementById('score_'+this.nom).innerHTML=this.nom+": "+this.point;
@@ -22,8 +23,8 @@ function actualisation_J()
 
 function actualisation_C()
 {
-    this.val_top=11+this.Y*pas;
-    this.val_left=11+this.X*pas;
+    this.val_top=decal_top+this.Y*pas;
+    this.val_left=decal_left+this.X*pas;
     document.getElementById(this.nom).style.top=this.val_top+'px';
     document.getElementById(this.nom).style.left=this.val_left+'px';
 }
