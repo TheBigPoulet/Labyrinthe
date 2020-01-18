@@ -72,10 +72,10 @@ function init()
         }
     }
 
-    J1 = new Joueur('J1',0,0,0,0,0);
+    J1 = new Joueur('J1',Cases[0].length-1,0,0,0,0);
     J1.actualisation_J();
 
-    J2 = new Joueur('J2',Cases[0].length-1,0,0,0,0);
+    J2 = new Joueur('J2',0,0,0,0,0);
     J2.actualisation_J();
 
     cle = new Points('cle',Math.floor(Math.random()*Cases[0].length),Math.floor(Math.random()*Cases.length),11,11);
