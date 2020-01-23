@@ -14,10 +14,10 @@ table{
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 440px;
-  height: 480px;
-  margin-left: -220px;
-  margin-top: -240px;
+  width: 840px;
+  height: 640px;
+  margin-left: -420px;
+  margin-top: -320px;
 }
 
 table img{
