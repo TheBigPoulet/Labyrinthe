@@ -14,10 +14,10 @@ table{
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 520px;
-  height: 520px;
-  margin-left: -260px;
-  margin-top: -260px;
+  width: 440px;
+  height: 480px;
+  margin-left: -220px;
+  margin-top: -240px;
 }
 
 table img{
@@ -49,6 +49,7 @@ td{
   top: 50%;
   height: 100px;
   margin-top: -50px;
+  font-size: 100px;
 }
 
 #retour{
