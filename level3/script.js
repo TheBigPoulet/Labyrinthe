@@ -1,7 +1,7 @@
 pas = 40;
 decal_top = document.getElementById("map").offsetTop + 11;
 decal_left = document.getElementById("map").offsetLeft + 11;
-point_max = 7;
+point_max = 10;
 
 function partie_fini()
 {
