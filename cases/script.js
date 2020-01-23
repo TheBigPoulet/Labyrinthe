@@ -13,4 +13,6 @@ function actualiser()
             cell.innerHTML = '<img src="Case_'+Cases[i][y]+'.png"></img>';
         }
     }
+    document.getElementById("valX").innerHTML=Cases[0].length*40;
+    document.getElementById("valY").innerHTML=Cases.length*40;
 }

@@ -1,0 +1,81 @@
+body{
+  background: black;
+  color: white;
+}
+
+#Cases{
+  visibility: hidden;
+  font-size: 1px;
+}
+
+table{
+  border: 0;
+  border-collapse : collapse;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 440px;
+  height: 480px;
+  margin-left: -220px;
+  margin-top: -240px;
+}
+
+table img{
+	display:block;
+}
+
+#J1,#J2,#cle{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+td{
+  padding: 0;
+}
+
+#score_J1{
+  position: absolute;
+  right: 200px;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px;
+  font-size: 100px;
+}
+
+#score_J2{
+  position: absolute;
+  left: 200px;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px;
+  font-size: 100px;
+}
+
+#retour{
+  font-size: 20px;
+  position: absolute;
+  top : 10px;
+  left: 10px;
+  text-decoration: none;
+  color:white;
+  border-radius: 10px;
+  padding: 5px;
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+#recommencer{
+  font-size: 25px;
+  position: absolute;
+  top : 10px;
+  left: 50px;
+  text-decoration: none;
+  color:white;
+  border-radius: 10px;
+  padding: 4px;
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
