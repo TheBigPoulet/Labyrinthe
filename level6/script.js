@@ -79,9 +79,6 @@ function init()
     J2 = new Joueur('J2',0,0,0,0,0);
     J2.actualisation_J();
 
-    cle = new Points('cle',Math.floor(Math.random()*Cases[0].length),Math.floor(Math.random()*Cases.length),11,11);
-    cle.actualisation_C();
-
     document.getElementById('score').style.top=(Cases.length*40+5)+"px"
 }
 
