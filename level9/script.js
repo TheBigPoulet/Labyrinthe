@@ -1,7 +1,10 @@
 pas = 40;
 decal_top = document.getElementById("map").offsetTop + 11;
 decal_left = document.getElementById("map").offsetLeft + 11;
-point_max = 5;
+point_max = 20;
+chat="J1S";
+old = Date.now();
+Ko = 1500;
 
 function partie_fini()
 {
@@ -14,19 +17,12 @@ function actualisation_J()
     this.val_left=decal_left+this.X*pas;
     document.getElementById(this.nom).style.top=this.val_top+'px';
     document.getElementById(this.nom).style.left=this.val_left+'px';
-    document.getElementById('score_'+this.nom).innerHTML=this.point;
-    if(this.point==point_max-1)
+    document.getElementById('score_'+this.nom).innerHTML=this.chrono.toFixed(0);
+    console.log(this.chrono)
+    if(this.chrono>=point_max-5)
     {
         document.getElementById('score_'+this.nom).style.color="red";
     }
-}
-
-function actualisation_C()
-{
-    this.val_top=decal_top+this.Y*pas;
-    this.val_left=decal_left+this.X*pas;
-    document.getElementById(this.nom).style.top=this.val_top+'px';
-    document.getElementById(this.nom).style.left=this.val_left+'px';
 }
 
 function Joueur(nom,X,Y,val_left,val_top,point)
@@ -36,22 +32,15 @@ function Joueur(nom,X,Y,val_left,val_top,point)
     this.Y=Y;
     this.val_left=val_left;
     this.val_top=val_top;
-    this.point=point;
     this.actualisation_J=actualisation_J;
     this.partie_fini=partie_fini;
+    this.pause;
+    this.chrono=0;
 }
 
-function Points(nom,X,Y,val_left,val_top)
-{
-    this.nom=nom;
-    this.X=X;
-    this.Y=Y;
-    this.val_left=val_left;
-    this.val_top=val_top;
-    this.actualisation_C=actualisation_C;
-}
 function init()
 {
+
     pro_cases = document.getElementById('Cases').innerHTML;
     Cases=pro_cases.split('\n');
     Cases.splice(0,1);
@@ -74,12 +63,11 @@ function init()
 
     J1 = new Joueur('J1',Cases[0].length-1,0,0,0,0);
     J1.actualisation_J();
+    J1.pause = Date.now();
+    J1.pause += 1500;
 
     J2 = new Joueur('J2',0,0,0,0,0);
     J2.actualisation_J();
-
-    cle = new Points('cle',Math.floor(Math.random()*Cases[0].length),Math.floor(Math.random()*Cases.length),11,11);
-    cle.actualisation_C();
 
     document.getElementById('score').style.top=(Cases.length*40+5)+"px"
 }
@@ -89,56 +77,56 @@ window.onkeydown = function(e) {
     switch (key) 
     {
         case 37: // <--
-            if(verif_direction("left",J1.X,J1.Y))
+            if(verif_direction("left",J1.X,J1.Y,J1.nom,J1.pause))
             {
                 J1.X--;
                 verif_point("J1");
             }
             break;
         case 39: // -->
-            if(verif_direction("right",J1.X,J1.Y))
+            if(verif_direction("right",J1.X,J1.Y,J1.nom,J1.pause))
             {
                 J1.X++;
                 verif_point("J1");
             }
             break;
         case 38: // /\
-            if(verif_direction("up",J1.X,J1.Y))
+            if(verif_direction("up",J1.X,J1.Y,J1.nom,J1.pause))
             {
                 J1.Y--;
                 verif_point("J1");
             }
             break;
         case 40: // \/
-            if(verif_direction("down",J1.X,J1.Y))
+            if(verif_direction("down",J1.X,J1.Y,J1.nom,J1.pause))
             {
                 J1.Y++;
                 verif_point("J1");
             }
             break;
         case 81: // Q
-            if(verif_direction("left",J2.X,J2.Y))
+            if(verif_direction("left",J2.X,J2.Y,J2.nom,J2.pause))
             {
                 J2.X--;
                 verif_point("J2");
             }
             break;
         case 68: // D
-            if(verif_direction("right",J2.X,J2.Y))
+            if(verif_direction("right",J2.X,J2.Y,J2.nom,J2.pause))
             {
                 J2.X++;
                 verif_point("J2");
             }
             break;
         case 90: // Z
-            if(verif_direction("up",J2.X,J2.Y))
+            if(verif_direction("up",J2.X,J2.Y,J2.nom,J2.pause))
             {
                 J2.Y--;
                 verif_point("J2");
             }
             break;
         case 83: // S
-            if(verif_direction("down",J2.X,J2.Y))
+            if(verif_direction("down",J2.X,J2.Y,J2.nom,J2.pause))
             {
                 J2.Y++;
                 verif_point("J2");
@@ -154,34 +142,35 @@ window.onkeydown = function(e) {
 
 function verif_point(J)
 {
-    if((J1.X==cle.X && J1.Y==cle.Y)||(J2.X==cle.X && J2.Y==cle.Y))
+    if(J1.X==J2.X && J1.Y==J2.Y)
     {
-        cle.X=Math.floor(Math.random()*Cases[0].length);
-        cle.Y=Math.floor(Math.random()*Cases.length);
-        cle.actualisation_C();
-        if(J=="J1")
+        if(chat=="J1"||chat=="J1S")
         {   
-            J1.point++;
-            if(J1.point==point_max)
-            {
-                J1.partie_fini();
-            }
+            chat="J2";
+            J2.pause = Date.now();
+            J2.chrono=0;
         }
-        else if(J=="J2")
+        else if(chat=="J2")
         {   
-            J2.point++;
-            if(J2.point==point_max)
-            {
-                J2.partie_fini();
-            }
+            chat="J1";
+            J1.pause = Date.now();
+            J1.chrono=0;
         }
     }
+
     J1.actualisation_J();
     J2.actualisation_J();
+
 }
 
-function verif_direction(direction,x,y)
+function verif_direction(direction,x,y,nom,pause)
 {
+    now = Date.now();
+    console.log(now-pause);
+    if((nom==chat)&&(now-pause<=Ko))
+    {
+        return 0;
+    }
     Case=Cases[y][x];
     if(direction=="left")
     {
@@ -214,4 +203,31 @@ function verif_direction(direction,x,y)
     return 0;
 }
 
+function temps()
+{
+    now = Date.now();
+    dif = (now-old)/1000;
+    if(chat=="J1"||chat=="J1S")
+    {
+        J2.chrono+=dif;
+    }
+    else if(chat=="J2")
+    {
+        J1.chrono+=dif;
+    }
+    J1.actualisation_J();
+    J2.actualisation_J();
+    old=Date.now();
+
+    if(J1.chrono>=point_max)
+    {
+        J1.partie_fini();
+    }
+    else if(J2.chrono>=point_max)
+    {
+        J2.partie_fini();
+    }
+}
+
+setInterval("temps()", 1);
 init();

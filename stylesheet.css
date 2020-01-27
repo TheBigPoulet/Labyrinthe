@@ -61,6 +61,16 @@ h1{
   linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
 }
 
+.levelchange{
+  text-align: center;
+  display: table-cell;
+  padding: 20px;
+  border-radius: 10px;
+  background : linear-gradient(217deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  linear-gradient(127deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%),
+  linear-gradient(336deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%);
+}
+
 .level > h2{
   text-align: center;
   font-family: "Retro_game";
