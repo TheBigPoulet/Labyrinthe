@@ -1,8 +1,10 @@
 pas = 40;
 decal_top = document.getElementById("map").offsetTop + 11;
 decal_left = document.getElementById("map").offsetLeft + 11;
-point_max = 15;
-chat="J1";
+point_max = 20;
+chat="J1S";
+old = Date.now();
+Ko = 1500;
 
 function partie_fini()
 {
@@ -15,8 +17,9 @@ function actualisation_J()
     this.val_left=decal_left+this.X*pas;
     document.getElementById(this.nom).style.top=this.val_top+'px';
     document.getElementById(this.nom).style.left=this.val_left+'px';
-    document.getElementById('score_'+this.nom).innerHTML=this.point;
-    if(this.point==point_max-1)
+    document.getElementById('score_'+this.nom).innerHTML=this.chrono.toFixed(0);
+    console.log(this.chrono)
+    if(this.chrono>=point_max-5)
     {
         document.getElementById('score_'+this.nom).style.color="red";
     }
@@ -29,10 +32,10 @@ function Joueur(nom,X,Y,val_left,val_top,point)
     this.Y=Y;
     this.val_left=val_left;
     this.val_top=val_top;
-    this.point=point;
     this.actualisation_J=actualisation_J;
     this.partie_fini=partie_fini;
     this.pause;
+    this.chrono=0;
 }
 
 function init()
@@ -141,26 +144,30 @@ function verif_point(J)
 {
     if(J1.X==J2.X && J1.Y==J2.Y)
     {
-        if(chat=="J1")
+        if(chat=="J1"||chat=="J1S")
         {   
             chat="J2";
             J2.pause = Date.now();
+            J2.chrono=0;
         }
         else if(chat=="J2")
         {   
             chat="J1";
             J1.pause = Date.now();
+            J1.chrono=0;
         }
     }
+
     J1.actualisation_J();
     J2.actualisation_J();
+
 }
 
 function verif_direction(direction,x,y,nom,pause)
 {
     now = Date.now();
     console.log(now-pause);
-    if((nom==chat)&&(now-pause<=1500))
+    if((nom==chat)&&(now-pause<=Ko))
     {
         return 0;
     }
@@ -196,4 +203,31 @@ function verif_direction(direction,x,y,nom,pause)
     return 0;
 }
 
+function temps()
+{
+    now = Date.now();
+    dif = (now-old)/1000;
+    if(chat=="J1"||chat=="J1S")
+    {
+        J2.chrono+=dif;
+    }
+    else if(chat=="J2")
+    {
+        J1.chrono+=dif;
+    }
+    J1.actualisation_J();
+    J2.actualisation_J();
+    old=Date.now();
+
+    if(J1.chrono>=point_max)
+    {
+        J1.partie_fini();
+    }
+    else if(J2.chrono>=point_max)
+    {
+        J2.partie_fini();
+    }
+}
+
+setInterval("temps()", 1);
 init();
