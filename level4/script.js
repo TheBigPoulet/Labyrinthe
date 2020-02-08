@@ -1,7 +1,7 @@
 pas = 40;
 decal_top = document.getElementById("map").offsetTop + 11;
 decal_left = document.getElementById("map").offsetLeft + 11;
-point_max = 5;
+point_max = 8;
 
 var move = new Audio('../son/move.mp3')
 move.volume=0.10;
@@ -183,9 +183,9 @@ function verif_point(J)
                 J2.partie_fini();
             }
         }
+        coins.load();
+        coins.play();
     }
-    coins.load();
-    coins.play();
     J1.actualisation_J();
     J2.actualisation_J();
 }

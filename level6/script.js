@@ -164,9 +164,9 @@ function verif_point(J)
             J1.pause = Date.now();
             J1.chrono=0;
         }
+        coins.load();
+        coins.play();
     }
-    coins.load();
-    coins.play();
     J1.actualisation_J();
     J2.actualisation_J();
 
