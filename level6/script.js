@@ -29,6 +29,10 @@ function actualisation_J()
     {
         document.getElementById('score_'+this.nom).style.color="red";
     }
+    else
+    {
+        document.getElementById('score_'+this.nom).style.color="white";
+    }
 }
 
 function Joueur(nom,X,Y,val_left,val_top,point)
