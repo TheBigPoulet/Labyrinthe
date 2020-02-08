@@ -6,6 +6,12 @@ chat="J1S";
 old = Date.now();
 Ko = 1500;
 
+var move = new Audio('../son/move.mp3')
+move.volume=0.10;
+
+var coins = new Audio('../son/coins.wav')
+move.volume=0.10;
+
 function partie_fini()
 {
     document.location.href="fin.html?win="+this.nom; 
@@ -136,6 +142,8 @@ window.onkeydown = function(e) {
             //console.log(key);
             break;
     }
+    move.load();
+    move.play();
     J1.actualisation_J();
     J2.actualisation_J();
 };
@@ -157,7 +165,8 @@ function verif_point(J)
             J1.chrono=0;
         }
     }
-
+    coins.load();
+    coins.play();
     J1.actualisation_J();
     J2.actualisation_J();
 

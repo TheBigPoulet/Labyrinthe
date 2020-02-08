@@ -3,6 +3,12 @@ decal_top = document.getElementById("map").offsetTop + 11;
 decal_left = document.getElementById("map").offsetLeft + 11;
 point_max = 5;
 
+var move = new Audio('../son/move.mp3')
+move.volume=0.10;
+
+var coins = new Audio('../son/coins.wav')
+move.volume=0.10;
+
 function partie_fini()
 {
     document.location.href="fin.html?win="+this.nom; 
@@ -148,6 +154,8 @@ window.onkeydown = function(e) {
             //console.log(key);
             break;
     }
+    move.load();
+    move.play();
     J1.actualisation_J();
     J2.actualisation_J();
 };
@@ -176,6 +184,8 @@ function verif_point(J)
             }
         }
     }
+    coins.load();
+    coins.play();
     J1.actualisation_J();
     J2.actualisation_J();
 }
